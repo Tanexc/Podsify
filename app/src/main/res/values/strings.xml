@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Podsify</string>
+    <string name="main_screen_grant_necessary_permissions">Grant necessary permissions!</string>
+    <string name="main_screen_grant_permissions_text">To use this app you should grant permissions.</string>
+    <string name="grant_permissions_card_grant">Grant</string>
+    <string name="main_screen_connected_device">Connected device</string>
+    <string name="main_screen_waiting_device_text">Waiting for any device to connect</string>
+    <string name="no_connected_devices">There are no conected bluetooth device</string>
+    <string name="widget_earbuts_left_title">L</string>
+    <string name="widget_earbuts_case_title">Case</string>
+    <string name="no_battery_info">No battery info</string>
+    <string name="battery_level_with_percent">%1$d %</string>
+    <string name="widget_earbuts_right_title">R</string>
+</resources>

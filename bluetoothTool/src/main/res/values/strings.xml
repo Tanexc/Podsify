@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Podsify</string>
+    <string name="service_text">Waiting for any device to connect</string>
+    <string name="service_title">Podsify bluetooth service</string>
+</resources>
