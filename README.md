@@ -26,7 +26,7 @@ And __[follow](https://github.com/tanexc)__ me!
 
 # License
 ```xml
-Designed and developed by 2024 Tanexc
+Designed and developed by 2026 Tanexc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
