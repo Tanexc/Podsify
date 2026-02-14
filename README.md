@@ -21,7 +21,7 @@ Contact me here:
 
 
 # Find this repository useful? :heart:
-Support it by joining __[stargazers](https://github.com/tanexc/imagetool/stargazers)__ for this repository. :star: <br>
+Support it by joining __[stargazers](https://github.com/tanexc/podsify/stargazers)__ for this repository. :star: <br>
 And __[follow](https://github.com/tanexc)__ me!
 
 # License
