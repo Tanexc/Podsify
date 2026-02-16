@@ -17,8 +17,8 @@ import androidx.glance.layout.padding
 import androidx.glance.text.FontWeight
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
-import com.tanexc.bluetoothtool.domain.Battery
-import com.tanexc.bluetoothtool.domain.Device
+import com.tanexc.bluetoothtool.domain.model.Battery
+import com.tanexc.bluetoothtool.domain.model.Device
 import com.tanexc.podsify.R
 import com.tanexc.podsify.widgets.core.WidgetSizes
 import com.tanexc.podsify.widgets.core.WidgetSizes.Companion.asWidgetSize

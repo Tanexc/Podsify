@@ -11,6 +11,7 @@ import androidx.glance.ImageProvider
 import androidx.glance.appwidget.cornerRadius
 import androidx.glance.background
 import androidx.glance.layout.Box
+import androidx.glance.layout.Spacer
 import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.text.FontWeight
@@ -38,7 +39,7 @@ fun HeadphonesBattery(
                 .size(36.dp)
         )
     }
-
+    Spacer(GlanceModifier.size(16.dp))
     Text(
         text = "$level %",
         style = TextStyle(
