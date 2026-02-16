@@ -1,14 +1,9 @@
 package com.tanexc.bluetoothtool.data
 
 import android.annotation.SuppressLint
-import android.bluetooth.BluetoothAdapter
-import android.bluetooth.BluetoothDevice
-import android.bluetooth.BluetoothManager
-import android.content.Context
 import android.media.AudioDeviceCallback
 import android.media.AudioDeviceInfo
 import android.media.AudioManager
-import android.util.Log
 import com.tanexc.bluetoothtool.domain.model.Battery
 import com.tanexc.bluetoothtool.domain.model.Device
 import com.tanexc.bluetoothtool.utils.getManufacturer

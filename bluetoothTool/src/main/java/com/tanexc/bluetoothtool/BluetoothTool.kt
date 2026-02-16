@@ -1,18 +1,13 @@
 package com.tanexc.bluetoothtool
 
 import android.content.Context
-import android.content.Intent
-import android.net.NetworkRequest
 import androidx.compose.runtime.Stable
-import androidx.compose.ui.unit.Constraints
 import androidx.work.ExistingWorkPolicy
-import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.OutOfQuotaPolicy
 import androidx.work.WorkManager
 import com.tanexc.bluetoothtool.domain.ConnectionState
 import com.tanexc.bluetoothtool.worker.BluetoothWorker
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 @Stable

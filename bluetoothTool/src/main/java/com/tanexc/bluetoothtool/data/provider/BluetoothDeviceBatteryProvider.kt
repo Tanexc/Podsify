@@ -8,7 +8,6 @@ import android.content.Context.RECEIVER_EXPORTED
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Build
-import android.util.Log
 import com.tanexc.bluetoothtool.domain.DeviceBatteryProvider
 import com.tanexc.bluetoothtool.domain.model.Battery
 import kotlinx.coroutines.channels.awaitClose

@@ -1,15 +1,12 @@
 package com.tanexc.bluetoothtool.domain.usecase
 
-import android.util.Log
 import com.tanexc.bluetoothtool.domain.ConnectionState
 import com.tanexc.bluetoothtool.domain.repository.DeviceBatteryRepository
 import com.tanexc.bluetoothtool.domain.repository.DeviceRepository
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.transform
 
 internal class GetConnectionStateUseCase(
     private val deviceBatteryRepository: DeviceBatteryRepository,
