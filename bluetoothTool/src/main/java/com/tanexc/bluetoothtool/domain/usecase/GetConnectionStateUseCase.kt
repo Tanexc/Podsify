@@ -3,6 +3,7 @@ package com.tanexc.bluetoothtool.domain.usecase
 import com.tanexc.bluetoothtool.domain.ConnectionState
 import com.tanexc.bluetoothtool.domain.repository.DeviceBatteryRepository
 import com.tanexc.bluetoothtool.domain.repository.DeviceRepository
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
@@ -12,6 +13,7 @@ internal class GetConnectionStateUseCase(
     private val deviceBatteryRepository: DeviceBatteryRepository,
     private val deviceRepository: DeviceRepository
 ) {
+    @OptIn(ExperimentalCoroutinesApi::class)
     operator fun invoke(): Flow<ConnectionState> = deviceRepository
         .getConnectedDevice()
         .flatMapLatest { device ->
