@@ -2,6 +2,11 @@ package com.tanexc.podsify.presentation.screen.main
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -56,8 +61,13 @@ fun MainScreen(component: MainScreenComponent) {
             }
         )
 
-        ConnectionCard(
-            state = connectionState
-        )
+        AnimatedVisibility(
+            visible = permissionState is PermissionState.Granted,
+            enter = fadeIn()
+        ) {
+            ConnectionCard(
+                state = connectionState
+            )
+        }
     }
 }
