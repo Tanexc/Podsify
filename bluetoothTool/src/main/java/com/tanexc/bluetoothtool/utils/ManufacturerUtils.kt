@@ -1,13 +1,13 @@
 package com.tanexc.bluetoothtool.utils
 
 import android.Manifest
-import android.bluetooth.BluetoothDevice
+import android.media.AudioDeviceInfo
 import androidx.annotation.RequiresPermission
-import com.tanexc.bluetoothtool.domain.Manufacturer
+import com.tanexc.bluetoothtool.domain.model.Manufacturer
 
 @RequiresPermission(Manifest.permission.BLUETOOTH_CONNECT)
-fun BluetoothDevice.getHeadphoneManufacturer(): Manufacturer {
-    val name = this.name.uppercase()
+fun AudioDeviceInfo.getManufacturer(): Manufacturer {
+    val name = this.productName.toString().uppercase()
 
     return when {
         isApple(name) -> Manufacturer.Apple

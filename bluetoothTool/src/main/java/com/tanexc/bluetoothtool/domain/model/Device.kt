@@ -1,4 +1,4 @@
-package com.tanexc.bluetoothtool.domain
+package com.tanexc.bluetoothtool.domain.model
 
 import androidx.compose.runtime.Stable
 

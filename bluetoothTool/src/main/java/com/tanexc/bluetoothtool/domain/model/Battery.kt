@@ -1,4 +1,4 @@
-package com.tanexc.bluetoothtool.domain
+package com.tanexc.bluetoothtool.domain.model
 sealed class Battery {
     data class HeadPhoneBattery(
         val batteryLevel: Int = -1

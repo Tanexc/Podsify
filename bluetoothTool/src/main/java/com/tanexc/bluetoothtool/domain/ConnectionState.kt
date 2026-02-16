@@ -1,6 +1,7 @@
 package com.tanexc.bluetoothtool.domain
 
 import androidx.compose.runtime.Stable
+import com.tanexc.bluetoothtool.domain.model.Device
 
 @Stable
 sealed interface ConnectionState {
