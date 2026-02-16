@@ -23,9 +23,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.tanexc.bluetoothtool.domain.Battery
+import com.tanexc.bluetoothtool.domain.model.Battery
 import com.tanexc.bluetoothtool.domain.ConnectionState
-import com.tanexc.bluetoothtool.domain.Device
+import com.tanexc.bluetoothtool.domain.model.Device
 import com.tanexc.podsify.R
 
 @Composable
