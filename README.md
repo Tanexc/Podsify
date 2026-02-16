@@ -1,5 +1,5 @@
 # 🖼️ Podsify
-<p align="center"> <b>Podsify</b> is an Android application that allows you to see battery level of your AirPods!</p>
+<p align="center"> <b>Podsify</b> is an Android application that allows you to see battery level of your AirPods (and others bluetooth headphones)!</p>
 
 <img width="5439" height="4042" alt="Podsify_preview" src="https://github.com/user-attachments/assets/3aee2975-21fd-437c-848e-405bbabdbed0" />
 
