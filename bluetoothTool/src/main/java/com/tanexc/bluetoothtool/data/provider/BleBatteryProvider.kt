@@ -7,7 +7,6 @@ import android.bluetooth.le.ScanCallback
 import android.bluetooth.le.ScanFilter
 import android.bluetooth.le.ScanResult
 import android.bluetooth.le.ScanSettings
-import android.util.Log
 import androidx.annotation.RequiresPermission
 import com.tanexc.bluetoothtool.domain.DeviceBatteryProvider
 import com.tanexc.bluetoothtool.domain.model.Battery
@@ -26,9 +25,7 @@ class BleBatteryProvider : DeviceBatteryProvider, KoinComponent {
         .setReportDelay(5_000)
         .setNumOfMatches(ScanSettings.MATCH_NUM_MAX_ADVERTISEMENT)
         .setMatchMode(ScanSettings.MATCH_MODE_STICKY)
-        .apply {
-            setCallbackType(ScanSettings.CALLBACK_TYPE_ALL_MATCHES)
-        }
+        .setCallbackType(ScanSettings.CALLBACK_TYPE_ALL_MATCHES)
         .build()
 
     @RequiresPermission(allOf = [Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT])
@@ -50,7 +47,6 @@ class BleBatteryProvider : DeviceBatteryProvider, KoinComponent {
         val callback: ScanCallback = object : ScanCallback() {
             override fun onBatchScanResults(results: List<ScanResult?>?) {
                 super.onBatchScanResults(results)
-                Log.i("cucu", "parse apple batch")
                 results
                     ?.filterNotNull()
                     ?.let { preparedResults ->
@@ -62,13 +58,11 @@ class BleBatteryProvider : DeviceBatteryProvider, KoinComponent {
 
         bluetoothLeScanner.startScan(scanFilters, scanSettings, callback)
         awaitClose {
-            Log.i("cucu", "parse apple closed")
             bluetoothLeScanner.stopScan(callback)
         }
     }
 
     fun parseScanResults(results: List<ScanResult>): Battery {
-        Log.i("cucu", "parse apple")
         val validData = results
             .mapNotNull { result ->
                 result.scanRecord?.let {
