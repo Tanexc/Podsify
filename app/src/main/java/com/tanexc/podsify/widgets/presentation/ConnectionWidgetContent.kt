@@ -16,9 +16,9 @@ fun ConnectionWidgetContent(
     when (state) {
         is ConnectionState.Connected -> {
             val device = state.device
-            BaseDeviceConnectionCard(device)
+            BaseDeviceConnectionCard(modifier, device)
         }
 
-        else -> NoConnectionCard()
+        else -> NoConnectionCard(modifier)
     }
 }

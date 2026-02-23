@@ -4,7 +4,8 @@ import android.app.Application
 import androidx.glance.appwidget.updateAll
 import com.tanexc.bluetoothtool.BluetoothTool
 import com.tanexc.bluetoothtool.di.bluetoothModule
-import com.tanexc.podsify.presentation.di.decomposeModule
+import com.tanexc.podsify.di.decomposeModule
+import com.tanexc.podsify.di.launchHelper
 import com.tanexc.podsify.widgets.PodsifyWidget
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -21,7 +22,7 @@ class PodsifyApplication : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@PodsifyApplication)
-            modules(decomposeModule, bluetoothModule)
+            modules(launchHelper, decomposeModule, bluetoothModule)
         }
 
         scope.launch {

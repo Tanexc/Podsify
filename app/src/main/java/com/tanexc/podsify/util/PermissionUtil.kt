@@ -9,12 +9,15 @@ import androidx.core.content.ContextCompat
 fun Context.checkNecessaryPermissions(): Set<String> {
     val permissions = mutableListOf(
         Manifest.permission.ACCESS_FINE_LOCATION,
-        Manifest.permission.ACCESS_COARSE_LOCATION,
-        Manifest.permission.BLUETOOTH_SCAN
+        Manifest.permission.ACCESS_COARSE_LOCATION
     )
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
+        permissions.add(Manifest.permission.ACCESS_BACKGROUND_LOCATION)
+    }
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
         permissions.add(Manifest.permission.BLUETOOTH_CONNECT)
+        permissions.add(Manifest.permission.BLUETOOTH_SCAN)
     }
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

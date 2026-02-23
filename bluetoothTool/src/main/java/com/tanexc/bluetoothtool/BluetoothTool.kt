@@ -1,6 +1,8 @@
 package com.tanexc.bluetoothtool
 
 import android.content.Context
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Stable
 import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequestBuilder
@@ -17,6 +19,7 @@ class BluetoothTool(
     private val workTag = "BluetoothToolWork"
     private val workManager = WorkManager.getInstance(context.applicationContext)
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun start() {
         val request = OneTimeWorkRequestBuilder<BluetoothWorker>()
             .setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
@@ -24,14 +27,12 @@ class BluetoothTool(
 
         workManager.beginUniqueWork(
             uniqueWorkName = workTag,
-            existingWorkPolicy = ExistingWorkPolicy.REPLACE,
+            existingWorkPolicy = ExistingWorkPolicy.KEEP,
             request = request,
         ).enqueue()
     }
 
-    fun stop() {
-        workManager.cancelAllWorkByTag(workTag)
-    }
+    fun stop() = workManager.cancelAllWorkByTag(workTag)
 
     val connectionState: StateFlow<ConnectionState> = BluetoothWorker.connectionState
 }

@@ -26,10 +26,5 @@ class MainScreenComponent(
 
     fun startBluetoothTool() {
         bluetoothTool.start()
-        lifecycle.doOnDestroy { stopBluetoothTool() }
-    }
-
-    fun stopBluetoothTool() {
-        bluetoothTool.stop()
     }
 }

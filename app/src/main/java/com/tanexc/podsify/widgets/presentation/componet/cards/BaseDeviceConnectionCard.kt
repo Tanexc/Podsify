@@ -29,6 +29,7 @@ import com.tanexc.podsify.widgets.presentation.util.stringResource
 
 @Composable
 fun BaseDeviceConnectionCard(
+    modifier: GlanceModifier = GlanceModifier,
     device: Device
 ) {
     val size = LocalSize
@@ -36,7 +37,7 @@ fun BaseDeviceConnectionCard(
         .asWidgetSize()
 
     Box(
-        modifier = GlanceModifier
+        modifier = modifier
             .fillMaxSize()
             .background(GlanceTheme.colors.widgetBackground)
             .padding(8.dp),

@@ -2,7 +2,7 @@ package com.tanexc.podsify.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import com.arkivanov.decompose.ComponentContext
-import com.tanexc.podsify.presentation.di.getComponent
+import com.tanexc.podsify.di.getComponent
 import com.tanexc.podsify.presentation.screen.main.MainScreen
 import com.tanexc.podsify.presentation.screen.main.component.MainScreenComponent
 

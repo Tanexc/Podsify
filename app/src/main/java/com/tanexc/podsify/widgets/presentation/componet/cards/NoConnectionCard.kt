@@ -21,10 +21,12 @@ import com.tanexc.podsify.R
 import com.tanexc.podsify.widgets.presentation.util.stringResource
 
 @Composable
-fun NoConnectionCard() {
+fun NoConnectionCard(
+    modifier: GlanceModifier = GlanceModifier
+) {
     val context = LocalContext.current
     Column(
-        modifier = GlanceModifier
+        modifier = modifier
             .fillMaxSize()
             .padding(22.dp, 8.dp)
             .background(GlanceTheme.colors.widgetBackground),

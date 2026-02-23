@@ -13,6 +13,7 @@ import androidx.work.CoroutineWorker
 import androidx.work.ForegroundInfo
 import androidx.work.WorkerParameters
 import com.tanexc.bluetoothtool.R
+import com.tanexc.bluetoothtool.domain.ApplicationLaunchHelper
 import com.tanexc.bluetoothtool.domain.ConnectionState
 import com.tanexc.bluetoothtool.domain.usecase.GetConnectionStateUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -29,10 +30,13 @@ internal class BluetoothWorker(
     private val notificationManager: NotificationManagerCompat =
         NotificationManagerCompat.from(applicationContext)
 
+    private val applicationLaunchHelper: ApplicationLaunchHelper by inject()
+
     private val baseNotificationBuilder = NotificationCompat
         .Builder(appContext, CHANNEL_ID)
         .setSmallIcon(android.R.drawable.stat_sys_data_bluetooth)
         .setOngoing(true)
+        .setContentIntent(applicationLaunchHelper.provideLaunchIntent())
 
     override suspend fun doWork(): Result {
         setForeground(createForegroundInfo())
@@ -47,7 +51,9 @@ internal class BluetoothWorker(
                     )
                 }
 
-                else -> updateNotification()
+                else -> {
+                    updateNotification()
+                }
             }
         }
         return Result.retry()
@@ -97,7 +103,7 @@ internal class BluetoothWorker(
             MutableStateFlow<ConnectionState>(ConnectionState.NoConnection)
         val connectionState: StateFlow<ConnectionState> = _connectionState
 
-        private const val CHANNEL_ID = "Podsify notifications"
+        const val CHANNEL_ID = "Podsify notifications"
         private const val NOTIFICATION_ID = 1
     }
 }

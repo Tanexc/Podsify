@@ -1,4 +1,4 @@
-package com.tanexc.podsify.presentation.di
+package com.tanexc.podsify.di
 
 import com.arkivanov.decompose.ComponentContext
 import com.tanexc.podsify.presentation.navigation.BaseComponent
