@@ -34,9 +34,7 @@ fun MainScreen(component: MainScreenComponent) {
     LaunchedEffect(Unit) {
         val permissions = context.checkNecessaryPermissions()
         if (permissions.isNotEmpty()) component.updatePermissionsState(
-            PermissionState.Denied(
-                permissions
-            )
+            PermissionState.Denied(permissions)
         )
         else {
             component.updatePermissionsState(PermissionState.Granted)
@@ -50,6 +48,7 @@ fun MainScreen(component: MainScreenComponent) {
         val deniedPermissions = permissions.filter { (_, isGranted) -> !isGranted }.keys
         if (deniedPermissions.isEmpty()) {
             component.updatePermissionsState(PermissionState.Granted)
+            component.startBluetoothTool()
         } else {
             component.updatePermissionsState(PermissionState.Denied(deniedPermissions))
         }
@@ -70,7 +69,7 @@ fun MainScreen(component: MainScreenComponent) {
         ) {
             when (orientation) {
                 ORIENTATION_LANDSCAPE -> HorizontalConnectionCard(connectionState)
-                else ->ConnectionCard(connectionState)
+                else -> ConnectionCard(connectionState)
             }
 
         }
