@@ -34,7 +34,7 @@ internal class BluetoothWorker(
 
     private val baseNotificationBuilder = NotificationCompat
         .Builder(appContext, CHANNEL_ID)
-        .setSmallIcon(android.R.drawable.stat_sys_data_bluetooth)
+        .setSmallIcon(R.drawable.small_icon)
         .setOngoing(true)
         .setContentIntent(applicationLaunchHelper.provideLaunchIntent())
 

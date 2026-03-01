@@ -71,5 +71,7 @@ dependencies {
     implementation(libs.decompose)
     implementation(libs.decompose.extensions.compose)
 
+    implementation(libs.androidx.graphics.shapes)
+
     implementation(libs.kotlinx.serialization.json)
 }

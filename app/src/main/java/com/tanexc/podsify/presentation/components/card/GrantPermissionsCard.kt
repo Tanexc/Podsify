@@ -1,4 +1,4 @@
-package com.tanexc.podsify.presentation.screen.main
+package com.tanexc.podsify.presentation.components.card
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.shrinkVertically

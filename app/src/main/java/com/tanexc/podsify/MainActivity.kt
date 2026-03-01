@@ -17,7 +17,6 @@ import com.tanexc.podsify.presentation.navigation.RootComponent
 import com.tanexc.podsify.presentation.theme.PodsifyTheme
 
 class MainActivity : ComponentActivity() {
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

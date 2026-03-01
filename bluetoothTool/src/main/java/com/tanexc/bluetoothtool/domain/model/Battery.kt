@@ -1,4 +1,8 @@
 package com.tanexc.bluetoothtool.domain.model
+
+import androidx.compose.runtime.Stable
+
+@Stable
 sealed class Battery {
     data class HeadPhoneBattery(
         val batteryLevel: Int = -1
